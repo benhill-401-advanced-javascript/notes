@@ -1,0 +1,36 @@
+{
+  "name": "notes",
+  "version": "1.0.0",
+  "description": "dynamic app to add and delete notes",
+  "main": "notes.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/benhill-401-advanced-javascript/notes.git"
+  },
+  "keywords": [
+    "accept",
+    "and",
+    "validate",
+    "user",
+    "input",
+    "confirm",
+    "note",
+    "validation"
+  ],
+  "author": "Ben Hill",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/benhill-401-advanced-javascript/notes/issues"
+  },
+  "homepage": "https://github.com/benhill-401-advanced-javascript/notes#readme",
+  "dependencies": {
+    "is-url": "^1.2.4",
+    "minimist": "^1.2.5"
+  }
+}
