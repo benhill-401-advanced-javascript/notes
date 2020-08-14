@@ -1,4 +1,4 @@
-# LAB - Class 01
+# LAB - Class 02
 
 Project: Notesy
 
@@ -6,7 +6,7 @@ Author: Ben Hill
 
 Links and Resources
 
-submission PR: https://github.com/benhill-401-advanced-javascript/notes/pull/1
+submission PR:
 
 ci/cd (GitHub Actions)
 https://github.com/benhill-401-advanced-javascript/notes/blob/master/.github/workflows/javascript-tests.yml
