@@ -2,23 +2,30 @@
 
 const Notes = require('../lib/notes');
 
+jest.mock('minimist');
+const minimist = require('minimist');
 
-/**
-* @todo For notes module tests:
-nothing is logged to the console if htere was no command,
-if the command (add) and the data (note) were both valid, assert that the console shows the output
-HINT: You will need to use a spy to check the console.log as properly called
-*/
+
+
+
+// sets up environment to use mock minimist library
+minimist.mockImplementation(() => {
+  return {
+    a: 'Note has been added'
+
+  };
+});
+
 
 jest.spyOn(global.console, 'log');
 
-describe('Notes Module', () => {
+describe('Notes Module test suite', () => {
 
-  it('execute() is showing a valid command', () => {
-    const note = new Notes;
-    note.exports
-  })
-})
+  it('execute() does nothing with invalid options', () => {
+    const noteOne = new Notes({ command: 'add', payload: 'test' });
+    return noteOne.add();
+  });
+});
 
 
 
