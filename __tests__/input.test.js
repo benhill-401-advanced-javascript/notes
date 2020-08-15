@@ -17,21 +17,25 @@ HINT: you'll need to mock the minimist library so you an fake a user providing g
 // sets up environment to use mock minimist library
 minimist.mockImplementation(() => {
   return {
-    action: 'note has been added',
-    payload: 'correct command entered',
-    note: ''
+    // _: [],
+    a: 'Note has been added'
+
   };
 });
 
-const Input = require('../lib/input');
+const Input = require('../lib/input.js');
 
 describe('Input Module', () => {
-
-
 
   it('valid() returning output to be true', () => {
     let input = new Input();
     expect(input.valid()).toBeTruthy();
+  });
+
+  it('If valid() input is not given and returns false', () => {
+    let input = new Input();
+    input.command = undefined;
+    expect(input.command).toBeFalsy();
   });
 
 });
