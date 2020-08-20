@@ -1,20 +1,43 @@
 // 'use strict';
 
 // Requires the library files you will be writing (input, notes)
-
+// const chalk = require('chalk');
+// const error = chalk.bold.red;
+// console.log(chalk.blue('Hello World!'));
+require('dotenv').config();
+const mongoose = require('mongoose');
 const minimist = require('minimist');
+
 const Input = require('./lib/input.js');
 const Notes = require('./lib/notes.js');
-
+const NoteDB = require('./lib/model/notes-schema.js');
 
 const input = new Input();
 const note = new Notes(input);
-
 if (input.valid()) {
   note.execute();
-} else {
+}
+else {
   process.exit(9);
 }
+
+mongoose.connect(process.env.MONGODB_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+
+
+/**
+ * @dbConnectionTest
+ * @todo - Write callback function that returns conditional if connected or not
+ */
+// const dbConnectionTest = mongoose.connection;
+// dbConnectionTest.on('error', console.error.bind(console, 'connection error:'));
+// dbConnectionTest.once('open', function () {
+
+// })
+
+
 
 
 /*----------WHAT DO YOU WANT NOTESY TO DO?
