@@ -12,19 +12,21 @@ const Input = require('./lib/input.js');
 const Notes = require('./lib/notes.js');
 const NoteDB = require('./lib/model/notes-schema.js');
 
+mongoose.connect(process.env.MONGODB_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+
 const input = new Input();
 const note = new Notes(input);
 if (input.valid()) {
-  note.execute();
+  note.execute(input);
+  .then(mongoose.disconnect);
 }
 else {
   process.exit(9);
 }
 
-mongoose.connect(process.env.MONGODB_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
 
 
 /**
