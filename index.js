@@ -1,16 +1,13 @@
-// 'use strict';
+'use strict';
 
-// Requires the library files you will be writing (input, notes)
-// const chalk = require('chalk');
-// const error = chalk.bold.red;
-// console.log(chalk.blue('Hello World!'));
+// Requires the library files you will be writing 
 require('dotenv').config();
+const chalk = require('chalk');
 const mongoose = require('mongoose');
 const minimist = require('minimist');
 
 const Input = require('./lib/input.js');
 const Notes = require('./lib/notes.js');
-const NoteDB = require('./lib/model/notes-schema.js');
 
 mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
@@ -18,10 +15,11 @@ mongoose.connect(process.env.MONGODB_URI, {
 });
 
 const input = new Input();
+// console.log(input, chalk.inverse.yellow('new instance of INPUT'))
 const note = new Notes(input);
 if (input.valid()) {
-  note.execute(input);
-  .then(mongoose.disconnect);
+  note.execute(input)
+  // .then(mongoose.disconnect);
 }
 else {
   process.exit(9);
