@@ -1,44 +1,5 @@
 'use strict';
 
-// Requires the library files you will be writing 
-require('dotenv').config();
-const chalk = require('chalk');
-const mongoose = require('mongoose');
-const minimist = require('minimist');
-
-const Input = require('./lib/input.js');
-const Notes = require('./lib/notes.js');
-
-mongoose.connect(process.env.MONGODB_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
-
-const input = new Input();
-// console.log(input, chalk.inverse.yellow('new instance of INPUT'))
-const note = new Notes(input);
-if (input.valid()) {
-  note.execute(input)
-  // .then(mongoose.disconnect);
-}
-else {
-  process.exit(9);
-}
-
-
-
-/**
- * @dbConnectionTest
- * @todo - Write callback function that returns conditional if connected or not
- */
-// const dbConnectionTest = mongoose.connection;
-// dbConnectionTest.on('error', console.error.bind(console, 'connection error:'));
-// dbConnectionTest.once('open', function () {
-
-// })
-
-
-
 
 /*----------WHAT DO YOU WANT NOTESY TO DO?
 This app will be rolled out in four phases
@@ -51,3 +12,41 @@ minimist is taking the array that i'm getting back and turning into an objec tha
 input.js is going to evaluate and validate the input from the user (--add and string that returns from input)
 notes.js is going to execute the action and command into index.js which renders in the CLI
 */
+
+
+// // Requires the library files you will be writing 
+// require('dotenv').config();
+// const chalk = require('chalk');
+// const mongoose = require('mongoose');
+// const minimist = require('minimist');
+
+// const Input = require('./lib/input.js');
+// const Notes = require('./lib/notes.js');
+
+// mongoose.connect(process.env.MONGODB_URI, {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true,
+// });
+
+// const input = new Input();
+// // console.log(input, chalk.inverse.yellow('new instance of INPUT'))
+// const note = new Notes(input);
+// if (input.valid()) {
+//   note.execute(input)
+//   // .then(mongoose.disconnect);
+// }
+// else {
+//   process.exit(9);
+// }
+
+
+
+/**
+ * @dbConnectionTest
+ * @todo - Write callback function that returns conditional if connected or not
+ */
+// const dbConnectionTest = mongoose.connection;
+// dbConnectionTest.on('error', console.error.bind(console, 'connection error:'));
+// dbConnectionTest.once('open', function () {
+
+// })
