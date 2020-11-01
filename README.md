@@ -1,6 +1,8 @@
-# LAB - Class 02
+# LAB - Notesy
 
-## Project: Notesy
+## Project description: Phase one is basic input and ouput for command line arguments.
+
+- _**Command Line arguments:**_
 
 ### Author: Ben Hill
 
