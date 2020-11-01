@@ -1,10 +1,12 @@
-# LAB - Class 02
+# LAB - Notesy
 
-Project: Notesy
+## Project description: Phase one is basic input and ouput for command line arguments.
 
-Author: Ben Hill
+- _**Command Line arguments:**_
 
-Links and Resources
+### Author: Ben Hill
+
+### Links and Resources
 
 submission PR:
 
@@ -15,17 +17,19 @@ back-end server url (when applicable)
 
 front-end application (when applicable)
 
-Setup
+### Setup
+
 .env requirements (where applicable)
 i.e.
 
-PORT - Port Number
+- MONGODB_URI - localhost:27017
 
-MONGODB_URI - URL to the running mongo instance/db
+**How to initialize/run your application (where applicable)**
 
-How to initialize/run your application (where applicable)
-
-- node --add "enter text in a string"
+- node index.js
+- --add: Enter note you want to log
+- --category: CategoryName (category name must be one word)
+-
 
 How to use your library (where applicable)
 
